@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'capistrano-staging-branch'
   spec.version       = '0.0.1'
   spec.authors       = ['Tom Scott-Malden', 'Neil Aitken']
-  spec.email         = ['scott.walkinshaw@gmail.com']
+  spec.email         = ['tom@skywire.co.uk', 'neil@skywire.co.uk']
   spec.description   = %q{staging branch support for Skywire Capistrano}
   spec.summary       = %q{staging branch support for Skywire Capistrano}
   spec.homepage      = 'https://github.com/Skywire/capistrano-staging-branch'
