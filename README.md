@@ -29,5 +29,5 @@ To integrate with skywire slack staging branches add these values to your stagin
 ```
 # staging branch config
 set :channel, 'slack_channel_name'
-set :site, 'staging_site_name' e.g s1, s2, etc
+set :site, 'staging_site_name' # e.g s1, s2, etc
 ```
