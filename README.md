@@ -7,7 +7,7 @@
 Add the following to your project Gemfile
 
 ~~~
-gem 'capistrano-staging-branch', :git => 'git@github.com:Skywire/capistrano-staging-branch.git', :branch => 'master'
+gem 'capistrano-staging-branch','>=1.0.0', :git => 'git@github.com:Skywire/capistrano-staging-branch.git'
 ~~~
 
 Then run 
