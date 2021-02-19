@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'capistrano-staging-branch'
-  spec.version       = '0.0.2'
+  spec.version       = '1.0.0'
   spec.authors       = ['Tom Scott-Malden', 'Neil Aitken']
   spec.email         = ['tom@skywire.co.uk', 'neil@skywire.co.uk']
   spec.description   = %q{staging branch support for Skywire Capistrano}
