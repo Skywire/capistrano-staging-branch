@@ -20,7 +20,8 @@ namespace :stagingbranch do
         request.body = {
             channel: fetch(:channel, "stagingbranch"),
             site: fetch(:site, "none"),
-            branch: fetch(:branch, "master")
+            branch: fetch(:branch, "master"),
+            revision: fetch(:current_revision)
         }.to_json
         Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
           http.request(request)
