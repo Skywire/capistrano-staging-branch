@@ -14,19 +14,21 @@ req_options = {
 namespace :stagingbranch do
   desc "Write the checkout out branch to a .branch file so it can be read by the staging branch script"
   task :reserve do
-    on release_roles :all do
-      within release_path do
-        execute "echo \"#{fetch(:branch, "master")}\" > #{release_path}/.branch"
-        request.body = {
-            channel: fetch(:channel, "stagingbranch"),
-            site: fetch(:site, "none"),
-            branch: fetch(:branch, "master"),
-            revision: fetch(:current_revision)
-        }.to_json
-        Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-          http.request(request)
+    if fetch(:this_is_live) != true
+        on release_roles :all do
+          within release_path do
+            execute "echo \"#{fetch(:branch, "master")}\" > #{release_path}/.branch"
+            request.body = {
+                channel: fetch(:channel, "stagingbranch"),
+                site: fetch(:site, "none"),
+                branch: fetch(:branch, "master"),
+                revision: fetch(:current_revision)
+            }.to_json
+            Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+              http.request(request)
+            end
+          end
         end
-      end
     end
   end
   task :free do
